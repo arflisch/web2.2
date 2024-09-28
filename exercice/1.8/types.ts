@@ -1,14 +1,10 @@
-interface Pizza {
+interface Film {
   id: number;
   title: string;
-  content: string;
+  direction: string;
+  duration: number;
 }
 
-interface PizzaToUpdate {
-  title?: string;
-  content?: string;
-}
+type NewFilm = Omit<Film, "id">;
 
-type NewPizza = Omit<Pizza, "id">;
-
-export type { Pizza, NewPizza, PizzaToUpdate };
+export type { Film, NewFilm };

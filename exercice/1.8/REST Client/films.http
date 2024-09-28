@@ -1,0 +1,54 @@
+@baseUrl = http://localhost:3000
+GET {{baseUrl}}/films
+
+### Read film with ID == 1
+GET {{baseUrl}}/films/1
+
+### Read film with ID == 7
+GET {{baseUrl}}/films/7
+
+### Read films with minimum duration of 160
+GET {{baseUrl}}/films?minimum-duration=160
+
+### Read films with minimum duration of 0
+GET {{baseUrl}}/films?minimum-duration=0
+
+### Add a film 
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+    "title":"Star Wars: The Phantom Menace (Episode I)",
+    "direction": "George Lucas",
+    "duration": 136
+}
+
+### delete a film by his id
+DELETE {{baseUrl}}/films/2
+
+### patch a film
+PATCH {{baseUrl}}/films/3
+Content-Type: application/json
+
+{
+    "title": "new title"
+}
+
+### put a film with a good id
+PUT {{baseUrl}}/films/5
+Content-Type: application/json
+
+{
+    "title": "cars 1",
+    "duration": 170
+}
+
+### put a film with a wrong id
+PUT {{baseUrl}}/films/7
+Content-Type: application/json
+
+{
+    "title": "cars 1",
+    "direction": "Arnaud Flisch",
+    "duration": 170
+}
