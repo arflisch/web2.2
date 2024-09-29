@@ -1,0 +1,43 @@
+@baseUrel = http://localhost:3000
+
+### read all text
+GET {{baseUrel}}/texts
+
+### read all text filtered
+GET {{baseUrel}}/texts/?level=easy
+
+### read all text by id
+GET {{baseUrel}}/texts/215629756
+
+### read all text with a wrong id
+GET {{baseUrel}}/texts/21
+
+### create a new text
+POST {{baseUrel}}/texts
+Content-Type: application/json
+
+{
+    "content": "Once upon a time in a galaxy far, far away...",
+    "level": "easy"
+}
+
+### create a new text that already exists
+POST {{baseUrel}}/texts
+Content-Type: application/json
+
+{
+    "content": "Once upon a time in a galaxy far, far away...",
+    "level": "easy"
+}
+
+### create a new text with a nonexisting level
+POST {{baseUrel}}/texts
+Content-Type: application/json
+
+{
+    "content": "Once upon a time in a galaxy far, far away...",
+    "level": "hardcore"
+}
+
+### delete a text
+DELETE {{baseUrel}}/texts/215629756
